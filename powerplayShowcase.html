@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powerplay Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="powerplayShowcaseStyles.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <img src="portfolioLogo.png" alt="Logo">
+            Michael Lane
+        </a>
+        
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Home</a>
+        </nav>
+
+    </header>
+
+    <section id="home" class="banner">
+        <div class="row" id="icons-placeholder">
+            
+        </div>
+
+        <div class="logo-container">
+            <img src="projectLogos/ppshowcaseLogo.png" alt="Powerplay Showcase Logo">
+        </div>
+    </section>
+
+    <h2 class="description-text">A dynamic web application that highlights NHL games based on player and team criteria,
+        updated daily with current matchups</h2>
+
+    <div class="example-1">
+        <img src="example-1-final.png" alt="Powerplay Showcase Example 1">
+        <p>Games are filtered for each day based on a specific criteria: One team must have been top 5 in penalties per games
+            in the previous season, and the other team must have two or more players who are both the first forward line and 
+            the first powerplay line. 
+        </p>
+    </div>
+
+    <div class="python-github-desc">
+        <div class="social-links">
+            <p><i class="fa-brands fa-python"></i></p>
+            <p><i class="fa-solid fa-plus"></i></p>
+            <p><i class="fa-brands fa-github"></i></p>
+        </div>
+    
+        <div class="python-github-desc-text">
+            <h3>This project has two main Python files:</h3>
+
+            <h5>get_games_for_day.py:</h5>
+            <p>Uses Selenium to scrape NHL team line combinations and powerplay units from a specific website.</p>
+            <p>Loads the NHL 2024-25 schedule from an Excel file and filters games based on the current date.</p>
+            <p>Matches NHL teams in the top 5 list against their opponents, identifying players on both the first 
+                line and powerplay unit.</p>
+            <p>Appends fitting games to a separate excel file with relevant information</p>
+            <p>Configures Selenium to run in a headless Chrome browser for automated, non-visual web scraping.</p>
+
+            <h5>update_dates.py:</h5>
+            <p>This script updates the dates for upcoming games and refreshes the data in the application.</p>
+            <p>Reads and writes content to a script.js file, enabling automated updates to specific JavaScript date variables.</p>
+            <p>Utilizes regular expressions to find the maxDate and currentDate variables within the JavaScript code.</p>
+            <p>Automatically increments the maxDate and currentDate by one day using Python's datetime module.</p>
+            <p>Overwrites the original script.js file with the updated date values, ensuring the script remains current.</p>
+
+            <br>
+
+            <h3>This project also uses two Github Actions:</h3>
+
+            <h5>update_schedule.yml:</h5>
+            <p>Executes daily at 12:00 am CDT and can be manually triggered.</p>
+            <p>Runs get_games_for_day.py to update the filtered schedule excel file.</p>
+            <p>Configures Git, commits updates to filtered_schedule.xlsx, and pushes to the repository.</p>
+
+            <h5>update_dates.py:</h5>
+            <p>Executes daily at 12:10 CDT and can be manually triggered.</p>
+            <p>Runs update_dates.py to increment dates in script.js.</p>
+            <p>Configures Git, commits updates to script.js, and pushes to the repository.</p>
+        </div>
+    </div>
+    
+    <section id="github-link">
+        <a href="https://github.com/michaellane28/PPShowcase.git"><i class="fa-brands fa-github"></i> Check out the code! <i class="fa-brands fa-github"></i></a>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

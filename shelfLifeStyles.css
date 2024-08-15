@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+@font-face {
+    font-family: 'AlteHaasGroteskBold';
+    src: url('fonts/AlteHaasGroteskBold.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+html { 
+    background: rgba(7, 8, 12, 1);
+}
+
+body {
+    background-image: linear-gradient(to bottom right, #1c1e2e, #12141f);
+    /*background: #000;*/
+    min-height: 200vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 20px 100px;
+    z-index: 100000;
+}
+
+.logo img {
+    height: 50px;  /* Adjust the height to make the image smaller */
+    width: auto;
+    vertical-align: middle;
+}
+
+
+header.sticky {
+    padding: 10px 100px;
+    background: #1c1e2e;
+}
+
+header .logo {
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+    transition: 0.6s;
+    font-family: 'AlteHaasGroteskBold', sans-serif;
+}
+
+header nav a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: rgb(180, 200, 202);
+}
+
+.banner, section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    z-index: 1;
+}
+
+#home {
+    height: 30vh; /* Adjust the height as desired */
+}
+
+.container {
+    background: rgba(26, 28, 44, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    width: 45%;
+    z-index: 10000;
+}
+
+.logo-container {
+    margin-top: 30vh;
+    text-align: center;
+    z-index: 100;
+    border: 3px solid white;
+    border-radius: 50px;
+    position: relative;
+    background: rgba(7, 8, 12, 0.5); /* Low opacity black background */
+    width: 40%
+}
+
+.logo-container img {
+    height: 150px; /* Adjust the height of the logo */
+    width: auto;
+    vertical-align: middle;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.logo-container h1 {
+    font-family: 'AlteHaasGroteskBold', sans-serif;
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+.logo-container p {
+    margin-top: 10px; /* Adjust the spacing between the logo and the text */
+    font-size: 40px; /* Adjust the font size as needed */
+    color: #fff; /* Text color */
+    font-family: 'AlteHaasGroteskBold', sans-serif;
+}
+
+.description-text {
+    font-size: 2rem; /* Adjust the font size as needed */
+    color: #fff; /* White text color */
+    font-family: 'AlteHaasGroteskBold', sans-serif; /* Use the same font family as your logo */
+    text-align: center; /* Center the text */
+    position: relative;
+    z-index: 1001; /* Ensure it appears above background elements */
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 140px;
+    padding-bottom: 50px;
+}
+
+.example-1 {
+    width: 60%; /* Adjust as needed */
+    max-width: 1200px; /* Optional: set a max width to prevent it from being too wide on large screens */
+    margin: 40px auto; /* Center the container horizontally */
+    display: flex;
+    align-items: center; /* Vertically center items */
+    justify-content: center; /* Horizontally center items */
+    gap: 20px; /* Space between image and text */
+    padding: 20px; /* Adjust padding as needed */
+    text-align: left; /* Align text to the left */
+    z-index: 100;
+    position: relative;
+    border: 3px solid white;
+    border-radius: 30px;
+    background: rgba(7, 8, 12, 0.5); /* Low opacity black background */
+}
+
+.example-1 img {
+    height: 600px; /* Adjust the height of the image */
+    width: auto;
+    vertical-align: middle;
+    padding: 20px; /* Space between the image and its border */
+    border-radius: 55px; /* Rounded corners for the border */
+}
+
+.example-1 p {
+    font-size: 25px; /* Adjust the font size as needed */
+    color: #fff; /* Text color */
+    font-family: 'AlteHaasGroteskBold', sans-serif;
+    margin: 0; /* Remove default margin for paragraphs */
+    padding-left: 10px;
+}
+
+#github-link {
+    height: auto;
+    padding: 50px 100px;
+    justify-content: space-around;
+    z-index: 100000;
+    background: rgba(7, 8, 12, 0.7); /* Low opacity black background */
+}
+
+#github-link a {
+    font-size: 55px;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: none;
+    z-index: 10000;
+    font-family: 'AlteHaasGroteskBold', sans-serif; /* Use the same font family */
+}
+
+#github-link a:hover {
+    color: rgb(180, 200, 202);
+}
+
+#contact h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.banner h1 {
+    position: relative; /* Ensure the heading respects z-index */
+    z-index: 100; /* Place the heading above other elements */
+}
+
+.home h1 {
+    z-index: 10;
+}
+
+
+.banner .row {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* allow icons to wrap onto a new line */
+    z-index: 0; /* Ensure icons are behind other content */
+}
+
+.banner .row i {
+    font-size: 1.5rem; /* Adjust size as needed */
+    opacity: 1; /* Adjust opacity as desired */
+    margin: 30px; /* Adjust spacing between icons */
+    color: #06070a; /* Adjust icon color and opacity */
+    z-index: 0;
+    transform: rotate(-30deg);
+}
+
+.banner .row i.glow {
+    animation: glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        color: #06070a;
+        text-shadow: 0 0 12px #06070a;
+    }
+    2.5% {
+        color: #0a0c12;
+        text-shadow: 0 0 12px #0a0c12;
+    }
+    5% {
+        color: #0f121a; /* Slightly brighter */
+        text-shadow: 0 0 13px #0f121a; /* Adjusted text shadow */
+    }
+    7.5% {
+        color: #171a26; /* Brighter */
+        text-shadow: 0 0 14px #171a26; /* Adjusted text shadow */
+    }
+    10% {
+        color: #1f2333; /* Even brighter */
+        text-shadow: 0 0 15px #1f2333; /* Adjusted text shadow */
+    }
+    12.5%{
+        color: #262b40;
+        text-shadow: 0 0 12px #262b40;
+    }
+    15% {
+        color: #2f354f;
+        text-shadow: 0 0 12px #2f354f;
+    }
+    17.5% {
+        color: #363e5c; /* Slightly brighter */
+        text-shadow: 0 0 13px #363e5c; /* Adjusted text shadow */
+    }
+    20% {
+        color: #3d4569; /* Brighter */
+        text-shadow: 0 0 14px #3d4569; /* Adjusted text shadow */
+    }
+    22.5% {
+        color: #434d75; /* Even brighter */
+        text-shadow: 0 0 15px #434d75; /* Adjusted text shadow */
+    }
+    25% {
+        color: #4c5785;
+        text-shadow: 0 0 12px #4c5785;
+    }
+    27.5% {
+        color: #535f91;
+        text-shadow: 0 0 12px #535f91;
+    }
+    30% {
+        color: #59669e; /* Slightly brighter */
+        text-shadow: 0 0 13px #59669e; /* Adjusted text shadow */
+    }
+    32.5% {
+        color: #6170ad; /* Brighter */
+        text-shadow: 0 0 14px #6170ad; /* Adjusted text shadow */
+    }
+    35% {
+        color: #6879ba; /* Even brighter */
+        text-shadow: 0 0 15px #6879ba; /* Adjusted text shadow */
+    }
+    37.5% {
+        color: #6d7fc7;
+        text-shadow: 0 0 12px #6d7fc7;
+    }
+    40% {
+        color: #7487d4;
+        text-shadow: 0 0 12px #7487d4;
+    }
+    50% {
+        color: #9cafff;
+        text-shadow: 0 0 12px #9cafff;
+    }
+    60% {
+        color: #7487d4;
+        text-shadow: 0 0 12px #7487d4;
+    }
+    62.5% {
+        color: #6d7fc7;
+        text-shadow: 0 0 12px #6d7fc7;
+    }
+    65% {
+        color: #6879ba; /* Even brighter */
+        text-shadow: 0 0 15px #6879ba; /* Adjusted text shadow */
+    }
+    67.5% {
+        color: #6170ad; /* Brighter */
+        text-shadow: 0 0 14px #6170ad; /* Adjusted text shadow */
+    }
+    70% {
+        color: #59669e; /* Slightly brighter */
+        text-shadow: 0 0 13px #59669e; /* Adjusted text shadow */
+    }
+    72.5% {
+        color: #535f91;
+        text-shadow: 0 0 12px #535f91;
+    }
+    75% {
+        color: #4c5785;
+        text-shadow: 0 0 12px #4c5785;
+    }
+    77.5% {
+        color: #434d75; /* Even brighter */
+        text-shadow: 0 0 15px #434d75; /* Adjusted text shadow */
+    }
+    80% {
+        color: #3d4569; /* Brighter */
+        text-shadow: 0 0 14px #3d4569; /* Adjusted text shadow */
+    }
+    82.5% {
+        color: #363e5c; /* Slightly brighter */
+        text-shadow: 0 0 13px #363e5c; /* Adjusted text shadow */
+    }
+    85% {
+        color: #2f354f;
+        text-shadow: 0 0 12px #2f354f;
+    }
+    87.5% {
+        color: #262b40;
+        text-shadow: 0 0 12px #262b40;
+    }
+    90% {
+        color: #1f2333; /* Even brighter */
+        text-shadow: 0 0 15px #1f2333; /* Adjusted text shadow */
+    }
+    92.5% {
+        color: #171a26; /* Brighter */
+        text-shadow: 0 0 14px #171a26; /* Adjusted text shadow */
+    }
+    95% {
+        color: #0f121a; /* Slightly brighter */
+        text-shadow: 0 0 13px #0f121a; /* Adjusted text shadow */
+    }
+    97.5% {
+        color: #0a0c12;
+        text-shadow: 0 0 12px #0a0c12;
+    }
+    100% {
+        color: #06070a;
+        text-shadow: 0 0 12px #06070a;
+    }
+}

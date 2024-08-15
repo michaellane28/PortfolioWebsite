@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="iceManagementStyles.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <img src="portfolioLogo.png" alt="Logo">
+            Michael Lane
+        </a>
+        
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Home</a>
+        </nav>
+
+    </header>
+    <section id="home" class="banner">
+        <div class="row" id="icons-placeholder">
+            
+        </div>
+
+        <div class="logo-container">
+            <img src="projectLogos/iceManagementLogo.PNG" alt="Ice Management Logo">
+            <h1>Ice Management</h1>
+        </div>
+    </section>
+
+    <h2 class="description-text">An iOS application for designing and organizing hockey drills</h2>
+
+    <div class="example-1">
+        <img src="Ice-Management-Photos/IM_home_screen.png" alt="Ice Management Home Screen">
+        <p> Users can view a list of folders and individual drawings, 
+            each represented by custom icons and preview images. They can create new folders to organize their drawings 
+            or start a new drawing directly from the home screen. Users can also navigate into specific folders or drawings, 
+            and have the option to delete items with prompts for confirmation, ensuring their content is managed efficiently.
+        </p>
+    </div>
+
+    <div class="example-1">
+        <p> When creating a new drawing, users are presented with three different prompts: Name, Folder, Image. Names must be less than 30
+            characters and cannot be empty, folder is set to 'None' by default, and there are two template images for the user to choose 
+            from.
+        </p>
+        <img src="Ice-Management-Photos/IM_add_screen.png" alt="Ice Management Add Screen">
+    </div>
+
+    <div class="example-1">
+        <img src="Ice-Management-Photos/IM_drawing_screen.png" alt="Ice Management Drawing Screen">
+        <p> This application utlizes Apple's PencilKit. PencilKit provides a drawing environment that receives input from an Apple 
+            Pencil or the user’s finger. Users are able to select a variety of options from the PencilKit, and they are free to move it to any of
+            the four sides of the screen. Designs are automatically saved within the application, and can also be downloaded to the camera roll.
+        </p>
+    </div>
+
+    <div class="features">
+        <div class="features-title">
+            <p>Other Features</p>
+        </div>
+
+        <div class="features-text">
+            <h5>View for creating new folder:</h5>
+            <p>Similar to adding a new drawing, folder names must be less than 30 characters and cannot be empty. </p>
+
+            <h5>View for creating a drawing within a folder</h5>
+            <p>When users select to add a new canvas within a folder, a separate view appears with prompts for name and template image.</p>
+
+            <h5>Deletion Confirmation</h5>
+            <p>When a user deletes a folder, an alert appears asking if they would like to just delete the folder, or delete the folder
+                and the drawings inside of it.
+            </p>
+            <p>If they choose to only delete the folder, the drawings within are moved to the homescreen.</p>
+
+            <h5>Photo Library Authorization:</h5>
+            <p>Users are asked to authorize access to camera roll when first opening the application.</p>
+            <p>Application repeats request anytime the user tries to save a design without giving access first.</p>
+
+            <h5>Custom Alerts:</h5>
+            <img src="Ice-Management-Photos/custom_alerts.png" alt="Ice Management Custom Alerts">
+
+
+        </div>
+    </div>
+
+    <section id="github-link">
+        <a href="https://github.com/michaellane28/IceManagement_remote.git"><i class="fa-brands fa-github"></i> Check out the code! <i class="fa-brands fa-github"></i></a>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

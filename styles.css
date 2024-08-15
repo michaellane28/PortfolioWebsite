@@ -1,0 +1,637 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+@font-face {
+    font-family: 'AlteHaasGroteskBold';
+    src: url('fonts/AlteHaasGroteskBold.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+html { 
+    background: rgba(7, 8, 12, 1);
+    max-width: 100%;
+}
+
+body {
+    background-image: linear-gradient(to bottom right, #1c1e2e, #12141f);
+    /*background: #000;*/
+    min-height: 200vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 20px 100px;
+    z-index: 100000;
+}
+
+
+.social-links {
+    margin-top: 20px; /* Adjust the spacing between the text and the icons */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the spacing between the icons */
+}
+
+.social-links a {
+    color: #fff; /* Set the icon color to white */
+    font-size: 60px; /* Adjust the icon size as needed */
+    transition: color 0.3s; /* Smooth transition for color change on hover */
+}
+
+.social-links a:hover {
+    color: rgb(180, 200, 202); /* Change the icon color on hover */
+}
+
+
+.aboutme {
+    position: relative; /* Ensure text containers are positioned relative */
+    padding: 20px;
+    color: #fff; /* Text color */
+    z-index: 10; /* Ensure text containers are in front of icons */
+}
+
+.about-container {
+    display: grid;
+    grid-template-rows: auto 1fr; /* Two rows: title row and content row */
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 40px; /* Space between the two containers */
+    justify-items: center; /* Center the text containers horizontally */
+    margin-top: 20px; /* Space from the section heading */
+    position: relative; /* Ensure containers are positioned relative */
+}
+
+.about-title {
+    grid-row: 1; /* Place this in the first row */
+    grid-column: 1 / span 2; /* Span across both columns */
+    text-align: center; /* Center the title text */
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 25px;
+    width: 40%;
+    padding: 10px; /* Space inside the border */
+    background: rgba(7, 8, 12, 0.5); /* Low opacity black background */ /* Background color for the title */
+    border: 3px solid white; /* Border color and width */
+    border-radius: 30px; /* Rounded corners */
+}
+
+.about-text {
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Stack child elements vertically */
+    justify-content: center; /* Center content vertically */
+    width: 100%; /* Ensure containers take up full width within the grid cell */
+    max-width: 600px; /* Set a max-width to prevent overly wide text containers */
+    position: relative; /* Ensure containers are positioned relative */
+    z-index: 10; /* Ensure text containers are in front of icons */
+}
+
+.about-text.introduction {
+    text-align: left; /* Left-align text */
+    align-items: flex-start; /* Align items to the start (left) */
+    grid-row: 2; /* Place this in the second row */
+    grid-column: 1;
+}
+
+.about-text.introduction i {
+    font-size: 15px; /* Adjust the size as needed */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.about-text.skills {
+    text-align: center; /* Center-align text in the skills section */
+    align-items: center; /* Center items horizontally in the skills section */
+    grid-row: 2; /* Place this in the second row */
+    grid-column: 2;
+}
+
+.about-text.introduction p {
+    font-size: 25px; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Space between paragraphs */
+    text-align: left; /* Explicitly left-align text */
+    font-family: 'AlteHaasGroteskBold', sans-serif;
+}
+
+.about-text.skills p {
+    font-size: 25px; /* Adjust font size as needed */
+    margin-bottom: 10px; /* Space between paragraphs */
+    font-weight: 500;
+    font-family: 'AlteHaasGroteskBold', sans-serif;
+}
+
+.about-text h1 {
+    font-size: 60px;
+    font-family: 'AlteHaasGroteskBold', sans-serif;
+    margin-bottom: 20px; /* Space between paragraphs */
+}
+
+.about-text h2 {
+    font-size: 30px;
+    text-align: center; /* Center-align heading text */
+    font-family: 'AlteHaasGroteskBold', sans-serif;
+    margin-bottom: 20px; 
+}
+
+/* Animation for fading in */
+@keyframes aboutMeFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation for sliding in from left */
+@keyframes aboutMeSlideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for sliding in from right */
+@keyframes aboutMeSlideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Hidden by default */
+.hidden {
+    opacity: 0;
+}
+
+/* Add animations to the elements */
+.about-title.visible {
+    animation: aboutMeFadeIn 2s ease-in-out forwards;
+}
+
+.about-text.introduction.visible {
+    animation: aboutMeSlideInLeft 1s ease-out forwards;
+}
+
+.about-text.skills.visible {
+    animation: aboutMeSlideInRight 1s ease-out forwards;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-rows: auto auto auto; /* Three rows: title row and two rows for projects */
+    grid-template-columns: 1fr; /* Single column layout for the title */
+    gap: 40px; /* Space between the rows */
+    padding: 20px; /* Padding around the container */
+    justify-items: center; /* Center items horizontally */
+    text-align: center; /* Center text in the project items */
+    z-index: 100;
+}
+
+.projects-title {
+    grid-row: 1; /* Place this in the first row */
+    text-align: center; /* Center the title text */
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 25px;
+    width: 50%; /* Full width of the container */
+    padding: 10px;
+    background: rgba(7, 8, 12, 0.5); /* Low opacity black background */
+    border: 3px solid white; /* Border color and width */
+    border-radius: 30px; /* Rounded corners */
+}
+
+.projects-row {
+    grid-row: span 1; /* Each row spans one row in the grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 40px; /* Space between the columns */
+    justify-items: center; /* Center items horizontally */
+}
+
+.project {
+    background: rgba(15, 16, 25, 0.7); /* Low opacity black background */
+    border: 4px solid #fff; /* White border */
+    padding: 20px;
+    height: 300px; /* Adjust height to be dynamic based on content */
+    width: 600px; /* Adjust width for a more vertical look */
+    text-align: center; /* Center the text inside the container */
+    color: #fff; /* Text color */
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add drop shadow */
+}
+
+/* Animation for fading in */
+@keyframes projectFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation for sliding in from left */
+@keyframes projectSlideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for sliding in from right */
+@keyframes projectSlideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.projects-title.visible {
+    animation: projectFadeIn 2s ease-in-out forwards;
+}
+
+.project.ppshowcase.visible{
+    animation: projectSlideInLeft 1s ease-out forwards;
+}
+
+.project.shelflife.visible{
+    animation: projectSlideInLeft 1s ease-out forwards;
+}
+
+.project.icemanagement.visible{
+    animation: projectSlideInRight 1s ease-out forwards;
+}
+
+.project.uicolorcodes.visible{
+    animation: projectSlideInRight 1s ease-out forwards;
+}
+
+
+
+.projects {
+    margin-bottom: 60px; /* Add more space here as needed */
+}
+
+.project img {
+    height: 100px; /* Adjust the image size */
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.project .ui-color-codes-logo {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    height: 38px; /* Adjust the height as needed */
+    width: 225px; /* Adjust the width as needed */
+}
+
+.project .pp-showcase-logo {
+    width: 256px;
+    height: 72px;
+}
+
+.project:hover {
+    transform: translateY(-15px); /* Move the container up by 10 pixels on hover */
+}
+
+.project h2 {
+    margin-bottom: 10px; /* Space between heading and text */
+    font-family: 'AlteHaasGroteskBold', sans-serif;
+}
+
+.project p {
+    font-size: 20px; /* Adjust the font size of the description */
+    font-family: 'AlteHaasGroteskBold', sans-serif;
+}
+
+.project a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+.logo img {
+    height: 25px;  /* Adjust the height to make the image smaller */
+    width: auto;
+    vertical-align: middle;
+    padding-bottom: 10px;
+}
+
+
+header.sticky {
+    padding: 10px 100px;
+    background: #1c1e2e;
+}
+
+header .logo {
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+    transition: 0.6s;
+    font-family: 'AlteHaasGroteskBold', sans-serif;
+}
+
+header nav a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: rgb(180, 200, 202);
+}
+
+.banner, section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    z-index: 1;
+}
+
+#home {
+    height: 80vh; /* Adjust the height as desired */
+}
+
+@keyframes homeFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Optional: adds a slight upward movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Ends at the original position */
+    }
+}
+
+.logo-container {
+    text-align: center;
+    margin-top: 50px; /* Adjust the margin as needed */
+    z-index: 100;
+    animation: homeFadeIn 2s ease-out;
+}
+
+.logo-container img {
+    height: 150px; /* Adjust the height of the logo */
+    width: auto;
+    vertical-align: middle;
+}
+
+.logo-container p {
+    margin-top: 10px; /* Adjust the spacing between the logo and the text */
+    font-size: 40px; /* Adjust the font size as needed */
+    color: #fff; /* Text color */
+    font-family: 'AlteHaasGroteskBold', sans-serif;
+}
+
+#contact {
+    height: auto;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    z-index: 100000;
+    background: rgba(7, 8, 12, 0.7); /* Low opacity black background */
+}
+
+#contact h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.container {
+    background: rgba(26, 28, 44, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    width: 45%;
+    z-index: 10000;
+}
+
+.banner h1 {
+    position: relative; /* Ensure the heading respects z-index */
+    z-index: 100; /* Place the heading above other elements */
+}
+
+.home h1 {
+    z-index: 10;
+}
+
+.aboutme h1 {
+    z-index: 10;
+}
+
+.projects h1 {
+    z-index: 10;
+}
+
+.banner .row {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* allow icons to wrap onto a new line */
+    z-index: 0; /* Ensure icons are behind other content */
+}
+
+.banner .row i {
+    font-size: 1.5rem; /* Adjust size as needed */
+    opacity: 1; /* Adjust opacity as desired */
+    margin: 30px; /* Adjust spacing between icons */
+    color: #06070a; /* Adjust icon color and opacity */
+    z-index: 0;
+    transform: rotate(-30deg);
+}
+
+.banner .row i.glow {
+    animation: glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        color: #06070a;
+        text-shadow: 0 0 12px #06070a;
+    }
+    2.5% {
+        color: #0a0c12;
+        text-shadow: 0 0 12px #0a0c12;
+    }
+    5% {
+        color: #0f121a; /* Slightly brighter */
+        text-shadow: 0 0 13px #0f121a; /* Adjusted text shadow */
+    }
+    7.5% {
+        color: #171a26; /* Brighter */
+        text-shadow: 0 0 14px #171a26; /* Adjusted text shadow */
+    }
+    10% {
+        color: #1f2333; /* Even brighter */
+        text-shadow: 0 0 15px #1f2333; /* Adjusted text shadow */
+    }
+    12.5%{
+        color: #262b40;
+        text-shadow: 0 0 12px #262b40;
+    }
+    15% {
+        color: #2f354f;
+        text-shadow: 0 0 12px #2f354f;
+    }
+    17.5% {
+        color: #363e5c; /* Slightly brighter */
+        text-shadow: 0 0 13px #363e5c; /* Adjusted text shadow */
+    }
+    20% {
+        color: #3d4569; /* Brighter */
+        text-shadow: 0 0 14px #3d4569; /* Adjusted text shadow */
+    }
+    22.5% {
+        color: #434d75; /* Even brighter */
+        text-shadow: 0 0 15px #434d75; /* Adjusted text shadow */
+    }
+    25% {
+        color: #4c5785;
+        text-shadow: 0 0 12px #4c5785;
+    }
+    27.5% {
+        color: #535f91;
+        text-shadow: 0 0 12px #535f91;
+    }
+    30% {
+        color: #59669e; /* Slightly brighter */
+        text-shadow: 0 0 13px #59669e; /* Adjusted text shadow */
+    }
+    32.5% {
+        color: #6170ad; /* Brighter */
+        text-shadow: 0 0 14px #6170ad; /* Adjusted text shadow */
+    }
+    35% {
+        color: #6879ba; /* Even brighter */
+        text-shadow: 0 0 15px #6879ba; /* Adjusted text shadow */
+    }
+    37.5% {
+        color: #6d7fc7;
+        text-shadow: 0 0 12px #6d7fc7;
+    }
+    40% {
+        color: #7487d4;
+        text-shadow: 0 0 12px #7487d4;
+    }
+    50% {
+        color: #9cafff;
+        text-shadow: 0 0 12px #9cafff;
+    }
+    60% {
+        color: #7487d4;
+        text-shadow: 0 0 12px #7487d4;
+    }
+    62.5% {
+        color: #6d7fc7;
+        text-shadow: 0 0 12px #6d7fc7;
+    }
+    65% {
+        color: #6879ba; /* Even brighter */
+        text-shadow: 0 0 15px #6879ba; /* Adjusted text shadow */
+    }
+    67.5% {
+        color: #6170ad; /* Brighter */
+        text-shadow: 0 0 14px #6170ad; /* Adjusted text shadow */
+    }
+    70% {
+        color: #59669e; /* Slightly brighter */
+        text-shadow: 0 0 13px #59669e; /* Adjusted text shadow */
+    }
+    72.5% {
+        color: #535f91;
+        text-shadow: 0 0 12px #535f91;
+    }
+    75% {
+        color: #4c5785;
+        text-shadow: 0 0 12px #4c5785;
+    }
+    77.5% {
+        color: #434d75; /* Even brighter */
+        text-shadow: 0 0 15px #434d75; /* Adjusted text shadow */
+    }
+    80% {
+        color: #3d4569; /* Brighter */
+        text-shadow: 0 0 14px #3d4569; /* Adjusted text shadow */
+    }
+    82.5% {
+        color: #363e5c; /* Slightly brighter */
+        text-shadow: 0 0 13px #363e5c; /* Adjusted text shadow */
+    }
+    85% {
+        color: #2f354f;
+        text-shadow: 0 0 12px #2f354f;
+    }
+    87.5% {
+        color: #262b40;
+        text-shadow: 0 0 12px #262b40;
+    }
+    90% {
+        color: #1f2333; /* Even brighter */
+        text-shadow: 0 0 15px #1f2333; /* Adjusted text shadow */
+    }
+    92.5% {
+        color: #171a26; /* Brighter */
+        text-shadow: 0 0 14px #171a26; /* Adjusted text shadow */
+    }
+    95% {
+        color: #0f121a; /* Slightly brighter */
+        text-shadow: 0 0 13px #0f121a; /* Adjusted text shadow */
+    }
+    97.5% {
+        color: #0a0c12;
+        text-shadow: 0 0 12px #0a0c12;
+    }
+    100% {
+        color: #06070a;
+        text-shadow: 0 0 12px #06070a;
+    }
+}
