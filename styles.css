@@ -240,10 +240,17 @@ header {
     width: 600px; /* Adjust width for a more vertical look */
     text-align: center; /* Center the text inside the container */
     color: #fff; /* Text color */
-    transition: transform 0.3s ease;
+    transition: transform .3s ease;
     text-decoration: none;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add drop shadow */
 }
+
+  
+.project:hover {
+    /* This will move the project up by 10px when hovered */
+    transform: translateY(-10px) !important;
+}
+
 
 /* Animation for fading in */
 @keyframes projectFadeIn {
@@ -300,7 +307,6 @@ header {
 }
 
 
-
 .projects {
     margin-bottom: 60px; /* Add more space here as needed */
 }
@@ -321,10 +327,6 @@ header {
 .project .pp-showcase-logo {
     width: 256px;
     height: 72px;
-}
-
-.project:hover {
-    transform: translateY(-15px); /* Move the container up by 10 pixels on hover */
 }
 
 .project h2 {
