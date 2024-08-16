@@ -42,6 +42,7 @@ header {
     height: 25px;  /* Adjust the height to make the image smaller */
     width: auto;
     vertical-align: middle;
+    padding-bottom: 5px;
 }
 
 
