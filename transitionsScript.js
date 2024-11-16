@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.projects-title, .project.ppshowcase, .project.shelflife, .project.icemanagement, .project.uicolorcodes');
+    const sections = document.querySelectorAll('.projects-title, .project.ppshowcase, .project.shelflife, .project.icemanagement, .project.uicolorcodes, .project.puckconnections');
 
     const options = {
         root: null,
@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                entry.target.classList.remove('hidden');
                 // Optionally, if you want to observe the element again after the animation
                 // observer.unobserve(entry.target); 
             }
